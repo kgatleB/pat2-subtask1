@@ -51,7 +51,6 @@ int main() {
             cout << upper << ": " << morse[upper] << endl;
             fullMorse += morse[upper] + "   "; // 3 spaces between letters
         }
-        // Ignore numbers and non-alphabetic characters
     }
 
     cout << "\nFull Morse code with spaces:\n" << fullMorse << endl;
