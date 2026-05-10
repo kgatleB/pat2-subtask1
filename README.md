@@ -18,4 +18,44 @@ B = -...                              C = -.-.                            Words 
 
 #References
 https://en.wikipedia.org/wiki/Morse_code⁠
-https://www.britannica.com/topic/Morse-Code⁠
+https://www.britannica.com/topic/Morse-Code
+
+
+⁠
+#include <iostream>
+#include <map>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    // Morse code dictionary (A–Z only)
+    map<char, string> morse = {
+        {'A', ".-"},   {'B', "-..."}, {'C', "-.-."}, {'D', "-.."},
+        {'E', "."},    {'F', "..-."}, {'G', "--."},  {'H', "...."},
+        {'I', ".."},   {'J', ".---"}, {'K', "-.-"},  {'L', ".-.."},
+        {'M', "--"},   {'N', "-."},   {'O', "---"},  {'P', ".--."},
+        {'Q', "--.-"}, {'R', ".-."},  {'S', "..."},  {'T', "-"},
+        {'U', "..-"},  {'V', "...-"}, {'W', ".--"},  {'X', "-..-"},
+        {'Y', "-.--"}, {'Z', "--.."}
+    };
+
+    string message;
+    cout << "Enter a short message: ";
+    getline(cin, message);
+
+    string fullMorse = "";
+
+    for (char c : message) {
+        if (isalpha(c)) {
+            char upper = toupper(c);
+            cout << upper << ": " << morse[upper] << endl;
+            fullMorse += morse[upper] + "   "; // 3 spaces between letters
+        }
+        // Ignore numbers and non-alphabetic characters
+    }
+
+    cout << "\nFull Morse code with spaces:\n" << fullMorse << endl;
+
+    return 0;
+}
