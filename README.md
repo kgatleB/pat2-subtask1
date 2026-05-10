@@ -29,7 +29,6 @@ https://www.britannica.com/topic/Morse-Code
 using namespace std;
 
 int main() {
-    // Morse code dictionary (A–Z only)
     map<char, string> morse = {
         {'A', ".-"},   {'B', "-..."}, {'C', "-.-."}, {'D', "-.."},
         {'E', "."},    {'F', "..-."}, {'G', "--."},  {'H', "...."},
